@@ -1,17 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/PPDB_MUSOKA/frontend/',
+  base: "/",
   server: {
     port: 5173,
     proxy: {
-      '/PPDB_MUSOKA/backend': {
-        target: 'http://localhost',
+      "/api": {
+        target: "http://localhost/PPDB_MUSOKA/backend",
         changeOrigin: true,
-      }
-    }
-  }
-})
+      },
+    },
+  },
+});
