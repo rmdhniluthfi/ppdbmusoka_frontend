@@ -1,5 +1,7 @@
 const API_BASE =
-  import.meta.env.VITE_API_URL || "http://localhost/PPDB_MUSOKA/backend";
+  process.env.NODE_ENV === "production"
+    ? ""
+    : "http://localhost/PPDB_MUSOKA/backend";
 
 let csrfToken = sessionStorage.getItem("csrf_token") || null;
 
